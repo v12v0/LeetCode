@@ -6,7 +6,9 @@
 # @param {Integer} n
 # @return {Integer}
 def first_bad_version(n)
-    (1..n).bsearch{|num| is_bad_version(num)}
+   (1..n).bsearch{|n| is_bad_version(n)}
  
     
 end
+
+ 
