@@ -7,19 +7,17 @@
 # if the current_value > nums[i]
 # the new length is 
 def find_length_of_lcis(nums)
-   return 0 if nums.empty?
-    return 1 if 1 == nums.size
+return 0 if !nums or nums.size < 1
+    current = 0 
+    longest = 0 
     
-    ans = 1
-    i = 0
-    (1...nums.size).each do |j|
-        if nums[j] <= nums[j-1]
-            i = j
-        end
-        size = j-i + 1
-        ans = size if size > ans
-    end
-    ans
+    nums.each_with_index do |n,i|
+        current += 1
+        longest = [current,longest].max
+        
+        if nums[i+1] and n >= nums[i+1]
+            current = 0 
+        end 
+    end 
+    longest
 end
-
-
