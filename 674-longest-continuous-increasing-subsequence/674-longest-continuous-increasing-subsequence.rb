@@ -2,18 +2,14 @@
 # @return {Integer}
 
 # sliding window
-# set the starting point to be nums.first 
-# set the ending point to be nums[i] 
-# counter = 0 
-# if starting point < nums[i]
-# counter += 1 
-# if staring point > nums[i]
-# set the starting point to nums[i]
-# iterate throught the nums array and compare the counter and change to new number if needed
-# return the max counter
+# if current_value > nums[i]
+#  set the current_value to be nums[i]
+# if the current_value > nums[i]
+# the new length is 
 def find_length_of_lcis(nums)
-    return 0 if nums.empty?
+   return 0 if nums.empty?
     return 1 if 1 == nums.size
+    
     ans = 1
     i = 0
     (1...nums.size).each do |j|
@@ -25,3 +21,5 @@ def find_length_of_lcis(nums)
     end
     ans
 end
+
+
