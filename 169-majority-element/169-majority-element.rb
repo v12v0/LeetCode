@@ -6,7 +6,6 @@ def majority_element(nums)
     nums.each do |num|
         hash[num] += 1
     end 
-    	hash = hash.sort_by{|k, v| v}.reverse  
-		hash.each{|k, v| return k}     
+    	 return (hash.max_by {|k,v| v})[0]
     
 end
