@@ -15,7 +15,7 @@ def remove_elements(head, val)
     curr = head 
     while curr != nil
         if curr.val == val
-            prev.next = curr.next
+            prev.next = prev.next.next
         else 
             prev = curr
         end 
