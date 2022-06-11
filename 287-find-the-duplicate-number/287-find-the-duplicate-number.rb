@@ -1,8 +1,11 @@
 # @param {Integer[]} nums
 # @return {Integer}
 def find_duplicate(nums)
-    nums_hash = Hash.new(0)
-    nums.each {|num| nums_hash[num] += 1}
-    nums_hash.keys.select{|key,value| nums_hash[key] > 1}.first
+    nums_hash = Hash.new
+    nums.each do |num|
+        return num if nums_hash[num]
+        nums_hash[num] = true
+    end 
+    
     
 end
