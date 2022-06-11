@@ -10,17 +10,16 @@
 # @param {Integer} val
 # @return {ListNode}
 def remove_elements(head, val)
-    dummy_head = ListNode.new(0,head)
+ dummy_head = ListNode.new(0,head)
     prev = dummy_head 
     curr = head 
-    
     while curr != nil
-        if curr.val == val 
-            prev.next = curr.next 
-        else
+        if curr.val == val
+            prev.next = curr.next
+        else 
             prev = curr
         end 
-        curr = curr.next
+        curr = curr.next 
     end 
     dummy_head.next
 end
