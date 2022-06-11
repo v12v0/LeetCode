@@ -1,7 +1,7 @@
 # @param {Integer[]} nums
 # @return {Integer}
 def single_number(nums)
-    hash = {}
+    hash = Hash.new
     
     nums.each do |n|
         if hash[n]
@@ -10,5 +10,5 @@ def single_number(nums)
             hash[n] = true
         end 
     end 
-    hash.keys.first 
+    p hash.keys.first
 end
