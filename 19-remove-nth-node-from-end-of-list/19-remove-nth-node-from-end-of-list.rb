@@ -16,19 +16,21 @@
 # return the last el 
 def remove_nth_from_end(head, n)
    dummy_head = ListNode.new(0,head)
-    forward = iterator = dummy_head 
+    left = dummy_head 
+    right = head
     
-    n.times do 
-        forward = forward.next 
+    
+    while n > 0 && right != nil
+        right = right.next
+        n -= 1
+    end
+    
+    while right != nil
+        left = left.next 
+        right = right.next
     end 
-    
-    while (forward.next != nil) do 
-        iterator = iterator.next 
-        forward = forward.next 
-    end 
-    
-    iterator.next = iterator.next.next 
-    return dummy_head.next
+    left.next = left.next.next
+    dummy_head.next
 end
 
 
