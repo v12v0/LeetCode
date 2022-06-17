@@ -2,15 +2,14 @@
 # @param {Integer} k
 # @return {Float}
 def find_max_average(nums, k)
-   window = nums[0..k-1].sum
-    max = window 
-    front = 0 
+    window_sum = nums[0..k-1].sum 
+    max_sum = window_sum 
+    first_number = 0 
     
-    nums[k..-1].each do |num|
-        window = window + num - nums[front]
-        front +=1 
-        max = window if window > max 
+    nums[k..nums.length].each do |i|
+        window_sum = window_sum + i - nums[first_number]
+        first_number += 1
+        max_sum = window_sum if window_sum > max_sum 
     end 
-    
-    max / (1.0 * k )
+        max_sum / (1.0 * k )
 end
