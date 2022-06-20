@@ -9,30 +9,22 @@
 # @param {ListNode} head
 # @param {Integer} n
 # @return {ListNode}
-
-# the head is the el previous from n
-# give all el behind the head 
-# skip the n el from the last 
-# return the last el 
 def remove_nth_from_end(head, n)
-   dummy_head = ListNode.new(0,head)
-    left = dummy_head 
+    dummy = ListNode.new(0,head)
+    left = dummy 
     right = head
     
     
     while n > 0 && right != nil
         right = right.next
         n -= 1
-    end
+    end 
     
-    while right != nil
-        left = left.next 
+    while right != nil 
+        left = left.next
         right = right.next
     end 
-    left.next = left.next.next
-    dummy_head.next
-end
-
-
     
- 
+    left.next = left.next.next 
+    dummy.next
+end
