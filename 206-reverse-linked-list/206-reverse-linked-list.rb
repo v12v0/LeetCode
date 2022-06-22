@@ -9,13 +9,15 @@
 # @param {ListNode} head
 # @return {ListNode}
 def reverse_list(head)
-    prev , curr = nil , head 
+    prev,curr = nil, head 
     
     while curr != nil
         nxt = curr.next
-        curr.next = prev
+        curr.next = prev 
         prev = curr
         curr = nxt
     end 
     prev
 end
+ 
+ 
