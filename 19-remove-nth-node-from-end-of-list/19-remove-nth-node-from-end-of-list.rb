@@ -12,11 +12,10 @@
 def remove_nth_from_end(head, n)
     dummy = ListNode.new(0,head)
     left = dummy 
-    right = head
+    right = head 
     
-    
-    while n > 0 && right != nil
-        right = right.next
+    while n > 0 && right 
+        right = right.next 
         n -= 1
     end 
     
@@ -24,7 +23,7 @@ def remove_nth_from_end(head, n)
         left = left.next
         right = right.next
     end 
-    
     left.next = left.next.next 
-    dummy.next
+    dummy.next 
+    
 end
