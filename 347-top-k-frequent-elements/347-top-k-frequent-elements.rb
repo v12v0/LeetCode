@@ -13,6 +13,9 @@ def top_k_frequent(nums, k)
     for i in 0...k
         array<<newHash[i][0]
     end
-    return array
+     return array 
+    
+   
+    
     
 end
