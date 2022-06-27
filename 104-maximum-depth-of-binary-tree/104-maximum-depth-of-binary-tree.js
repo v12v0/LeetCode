@@ -13,7 +13,7 @@
 var maxDepth = function(root) {
     if(root === null)return 0
     
-    const leftPath = maxDepth(root.left)
-    const rightPath = maxDepth(root.right)
-    return 1 + Math.max(leftPath, rightPath)
+    const leftPath = maxDepth(root.left) + 1
+    const rightPath = maxDepth(root.right) + 1
+    return  Math.max(leftPath, rightPath)
 };
