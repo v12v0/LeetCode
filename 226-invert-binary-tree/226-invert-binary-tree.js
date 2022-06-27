@@ -13,9 +13,9 @@
 var invertTree = function(root) {
     if(root === null)return null;
     
-    let store = root.left 
-    root.left = root.right
-    root.right = store
+    let store = root.right 
+    root.right = root.left 
+    root.left = store
     
     let leftPath = invertTree(root.left);
     let rightPath = invertTree(root.right);
