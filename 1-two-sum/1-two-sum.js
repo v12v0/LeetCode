@@ -9,11 +9,17 @@ var twoSum = function(nums, target) {
  for(let i = 0; i < nums.length; i++){
     const diff = target - nums[i]
     
-    if(hash_map[diff] !== undefined){
-        return [hash_map[diff], i]
-    }else{
+        if(diff in hash_map){
+            return [hash_map[diff], i]
+        }else{
         hash_map[nums[i]] = i 
     }
+    
+//     if(hash_map[diff] !== undefined){
+//         return [hash_map[diff], i]
+//     }else{
+//         hash_map[nums[i]] = i 
+//     }
  }
     
 };
